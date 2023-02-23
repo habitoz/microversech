@@ -26,24 +26,62 @@
 </head>
 
 <body class="w-full h-screen">
-    <div class="mx-auto text-center">
+    <div class="mx-auto text-center h-screen overflow-scroll">
         <h1 id="title" class="capitalize text-white mt-14">Microverse Survey form</h1>
         <p class="mt-1 text-white">Thank you for taking the time to help us improve the platform</p>
         <div class="text-start mx-auto w-1/2 bg-black px-10 py-10 opacity-80 mt-5" id="form">
-            <form id="survey-form" action="/" method="post">
+            <form id="survey-form" action="/" method="post" class="space-y-3">
                 <div class="">
                     <label id="name-label" class="capitalize text-white">name</label>
                     <input id="name" type="text" class="mt-1 px-2 py-1 w-full">
                 </div>
                 <div class="">
-                    <label id="name-label" class="capitalize text-white">email</label>
-                    <input id="name" type="email" class="mt-1 px-2 py-1 w-full">
+                    <label id="email-label" class="capitalize text-white">email</label>
+                    <input id="email" type="email" class="mt-1 px-2 py-1 w-full">
                 </div>
                 <div class="">
-                    <label id="name-label" class="capitalize text-white">number</label>
-                    <input id="name" type="number" min="2" max="50" class="mt-1 px-2 py-1 w-full">
+                    <label id="number-label" class="capitalize text-white">number</label>
+                    <input id="number" type="number" min="2" max="50" class="mt-1 px-2 py-1 w-full">
                 </div>
-                <button class="w-full bg-green " type="submit" id="submit">submit</button>
+                <div class="flex flex-col">
+                    <label id="number-label" class="capitalize text-white">Select field</label>
+                    <select name="options" id="dropdown" form="survey-form">
+                        <option value="value 1">option one</option>
+                        <option value="value 2">option two</option>
+                      </select>
+                </div>
+                <div>
+                    <div class="capitalize ">gender</div>
+                    <div class="mt-2 flex space-x-2">
+                        <div class="flex gap-2">
+                            <label for="css">Female</label><br>
+                            <input type="radio" id="female" name="gender" value="Female">
+                        </div>
+                        <div class="flex gap-2">
+                            <label for="male">Male</label><br>
+                            <input type="radio" id="male" name="gender" value="Male">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>What would you like to see improved? (Check all that apply)</div>
+                    <div class="mt-2 flex flex-col space-x-2">
+                        <div class="flex gap-2">
+                            <input type="checkbox" id="backend" name="backend" value="backend">
+                            <label for="backend">Backend</label><br>
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="checkbox" id="frontend" name="frontend" value="frontend">
+                            <label for="frontend">FrontEnd</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <label id="number-label" class="capitalize text-white">Any comment or suggestions?</label>
+                    <textarea rows="3" class="mt-1" />
+                </div>
+                <button class="w-full bg-green text-white block" type="submit" id="submit">submit</button>
             </form>
         </div>
     </div>
